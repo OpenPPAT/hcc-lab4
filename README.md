@@ -6,11 +6,8 @@ haptic-device using PC(ROS) and Arduino
 ### Dependencies
 
 ```
-sudo apt-get install python-bluetooth
-sudo apt-get install python-pip
+sudo apt-get install python-bluetooth python-pip bluez bluetooth
 sudo pip install bitstring
-sudo apt-get install bluez
-sudo apt-get install bluetooth
 ```
 ### ROS Package
 
