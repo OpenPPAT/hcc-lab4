@@ -11,7 +11,6 @@ sudo apt-get install python-pip
 sudo pip install bitstring
 sudo apt-get install bluez
 sudo apt-get install bluetooth
-
 ```
 ### ROS Package
 
@@ -23,3 +22,11 @@ $ cd catkin_ws
 $ catkin_make
 ```
 ## Run the Examples
+terminal 1
+```
+$ roscore
+```
+terminal 2
+```
+$ rosrun rosrun hello_arduino hello_arduino.py idx:=[mac address] 
+```
