@@ -6,20 +6,24 @@ haptic-device using PC(ROS) and Arduino
 ### Dependencies
 
 ```
-sudo apt-get install python-bluetooth
-sudo apt-get install python-pip
+sudo apt-get install python-bluetooth python-pip bluez bluetooth
 sudo pip install bitstring
-sudo apt-get install bluez
-sudo apt-get install bluetooth
-
 ```
 ### ROS Package
 
 ```
-$ git clone https://github.com/OpenPPAT/hcc-lab4.git
-$ cd hcc-lab4
-$ source environment.sh
-$ cd catkin_ws
-$ catkin_make
+git clone https://github.com/OpenPPAT/hcc-lab4.git
+cd hcc-lab4
+source environment.sh
+cd catkin_ws
+catkin_make
 ```
 ## Run the Examples
+terminal 1
+```
+roscore
+```
+terminal 2
+```
+rosrun rosrun hello_arduino hello_arduino.py idx:=[mac address] 
+```
