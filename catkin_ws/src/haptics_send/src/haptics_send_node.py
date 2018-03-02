@@ -59,11 +59,12 @@ class hapticSnedNode(object):
         toSend.append('0b00000')
         toSend.append('0x00')
         if self.enable_bluetooth:
-            rospy.logdebug("sending msg: %s" %(toSend))
+            rospy.loginfo("sending msg(hex): %s" %(toSend))
+            rospy.loginfo("sending msg(bin): %s"%(toSend.bin))
             self.bt.send(self.toConnect, str(toSend.tobytes()))
         else:
             rospy.logdebug("sending msg: %s" %(toSend))
-            #rospy.logdebug(str(toSend.bin))
+            rospy.logdebug(str(toSend.bin))
 
     def custom_shutdown(self):
         rospy.loginfo("[%s] Shutting down..." %self.node_name)

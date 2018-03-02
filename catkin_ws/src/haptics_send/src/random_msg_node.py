@@ -24,7 +24,7 @@ class randomMsgNode(object):
             # Random value
             self.frequencies = [randint(0,7),randint(0,7),randint(0,7)]
             self.intensities = [randint(1,5),randint(1,5),randint(1,5)]
-            print self.frequencies, self.intensities
+            print "frequencies:",self.frequencies, "intensities:", self.intensities
             self.send()
             self.rate.sleep()
 
