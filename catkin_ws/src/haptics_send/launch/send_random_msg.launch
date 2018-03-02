@@ -1,0 +1,18 @@
+<launch>
+
+<arg name="bt" default="true" doc="true for Bluetooth sending msgs"/>
+<arg name="mac" default="98:D3:31:F4:0C:89"/>
+
+<arg name="pkg_name" value="haptics_send"/>
+
+<node name="random_msg" pkg="$(arg pkg_name)" type="random_msg_node.py" output="screen" clear_params="true" >
+</node>
+
+<node name="haptics_send" pkg="$(arg pkg_name)" type="haptics_send_node.py" output="screen" clear_params="true" >
+	<param name="bt" value="$(arg bt)"/>
+	<param name="mac" value="$(arg mac)"/>
+</node>
+
+    
+</launch>
+
