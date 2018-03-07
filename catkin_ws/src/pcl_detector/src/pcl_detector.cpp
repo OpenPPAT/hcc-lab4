@@ -19,21 +19,24 @@ typedef pcl::PointCloud<pcl::PointXYZ> PointCloudXYZ;
 void  cloud_cb (const sensor_msgs::PointCloud2ConstPtr& input)
 {
 
-	PointCloudXYZ::Ptr cloud(new PointCloudXYZ);
-	pcl::fromROSMsg (*input, *cloud); //convert from PointCloud2 to pcl point type
-  //Exmaple : pcl PointCloudXYZRGB information
+  PointCloudXYZ::Ptr cloud(new PointCloudXYZ);
+  pcl::fromROSMsg (*input, *cloud); //convert from PointCloud2 to pcl point type
   std::vector<int> indices;
-  pcl::removeNaNFromPointCloud(*cloud, *cloud, indices);
+  pcl::removeNaNFromPointCloud(*cloud, *cloud, indices);  //Remove NAN from point cloud
   pcl::VoxelGrid<pcl::PointXYZ> sor;
   sor.setInputCloud (cloud);
   sor.setLeafSize (0.005f, 0.005f, 0.005f);
-  sor.filter (*cloud);
+  sor.filter (*cloud);	//Downsample point cloud
   printf("-------------------------Cloud information-----------------------------\n");
   printf("cloud size: %d\n",cloud->points.size());
   int cloud_size=cloud->points.size();
   //----------------------------------------------------------------------
-  //process cloud here
-  //find out where are the obstacles, left, front or right
+  //Please design your algorithm to find out the road information: whether there are obstacled on the left, front or right.
+
+
+
+
+
   //---------------------------------------------------------------------
   vibration_msgs::VibrationArray vbArray;
   for(int i=0; i<3; i++){
