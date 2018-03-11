@@ -22,9 +22,9 @@ class randomMsgNode(object):
         self.rate = rospy.Rate(1) # 1hz
         while not rospy.is_shutdown():
             # Random value
-            self.frequencies = [randint(0,7),randint(0,7),randint(0,7)]
+            self.frequencies = [randint(1,5),randint(1,5),randint(1,5)]
             self.intensities = [randint(1,5),randint(1,5),randint(1,5)]
-            print "frequencies:",self.frequencies, "intensities:", self.intensities
+            print "intensities:", self.intensities, "frequencies:", self.frequencies
             self.send()
             self.rate.sleep()
 
